@@ -24,7 +24,7 @@ type User @entity {
 
 type _Schema_
   @fulltext(
-    name: "covenSearch"
+    name: "womenSearch"
     language: en
     algorithm: rank
     include: [
