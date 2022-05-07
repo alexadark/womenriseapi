@@ -77,5 +77,14 @@ export function handleTransfer(event: TransferEvent): void {
         }
       }
     }
+    token.updatedAtTimestamp = event.block.timestamp;
+    token.owner = event.params.to.toHexString();
+    token.save();
+
+    let user = User.load(event.params.to.toHexString());
+    if (!user) {
+      user = new User(event.params.to.toHexString());
+      user.save();
+    }
   }
 }
