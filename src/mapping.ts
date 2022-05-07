@@ -40,8 +40,9 @@ export function handleTransfer(event: TransferEvent): void {
           let item = attributes[i].toObject();
           let trait: string = "";
           let t = item.get("trait_type");
+
           if (t) {
-            t.toString();
+            trait = t.toString();
           }
           let value: string = "";
           let v = item.get("value");
